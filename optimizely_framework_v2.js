@@ -84,7 +84,7 @@ OptimizelyAPI.prototype.call = function(type, endpoint, data, callback) {
                 window.localStorage.removeItem('bearer');
                 window.location.reload();
             } else {
-                window.confirm("Sorry! Something went wrong. If you see the experiment in Optimizely, please archive it and try again.\n" + textstatus);
+                window.confirm("Sorry! Something went wrong. Please try again and check your inputs.\n" + textstatus);
                 window.location.reload();
             }
         }
