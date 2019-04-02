@@ -3,21 +3,25 @@
 <head>
   <title>Show Experiment IDs</title>
   <script src="./optimizely_framework_v2.js" type="text/javascript" charset="utf-8"></script> 
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <form action="javascript:void(0);" id="simple-form">
       Select Project ID: <select id=projectid>
           <option value='loading'>Loading...</option>
-      </select>      
+      </select>
+      <i class="c-inline-spinner" id="projectspinner"></i>
       <br/>
       <br/>
-      <input type="submit" value="Show me the Experiments">
+      <input type="submit" value="Show me the Experiments" id="getexperiments" style="display: none">
   </form>
   <p>---------------------------------------------------</p>
-  <div id='download'></div>
-  <p>---------------------------------------------------</p>
-  <h4>Experiment List</h4>
-  <div id="experiments"></div>
+  <div id="spinner" style="display: none"></div>
+  <div id='experimentlist' style='display: none'>
+      <div id='download'></div>
+      <h4>Experiment List</h4>
+      <div id="experiments"></div>
+  </div>
   </br>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="./index.js" type="text/javascript" charset="utf-8"></script>

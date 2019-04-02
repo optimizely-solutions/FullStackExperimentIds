@@ -20,16 +20,23 @@ optly.get("projects?per_page=100", function(projects){
         var project = projects[i];
         options += "<option value='" + project.id + "'>" + project.name + "</option>";
     }
-    document.getElementById("projectid").innerHTML = options;;    
+    document.getElementById("projectid").innerHTML = options;
+    document.getElementById('projectspinner').style.display = "none";
+    document.getElementById('getexperiments').style.display = "block";
 });
 
 var form = document.getElementById("simple-form")
 form.onsubmit = function (event) { 
     event.preventDefault();
+    document.getElementById('spinner').style.display = "block";
+    document.getElementById('experimentlist').style.display = "none";
     var projectID = document.getElementById("projectid").value;
     optly.get("experiments?per_page=100&project_id=" + projectID, function(exps){
         console.log(exps);
         var htmlString = "";
+        if (exps.length < 1){
+            var htmlString = "No Experiments Found";
+        }
         var button = "<button onclick='download_csv()'>Download CSV</button>";
         for (let i = 0; i < exps.length; i++) {
             var experiment = exps[i];
@@ -38,6 +45,8 @@ form.onsubmit = function (event) {
         }
         document.getElementById("experiments").innerHTML = htmlString;
         document.getElementById("download").innerHTML = button;
+        document.getElementById('spinner').style.display = "none";
+        document.getElementById('experimentlist').style.display = "block";
     });
 }
 
