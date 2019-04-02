@@ -14,6 +14,14 @@ function download_csv() {
     hiddenElement.click();
 }
 
+optly.get("projects?per_page=100", function(projects){
+    var options = "";
+    for (let i = 0; i < projects.length; i++) {
+        var project = projects[i];
+        options += "<option value='" + project.id + "'>" + project.name + "</option>";
+    }
+    document.getElementById("projectid").innerHTML = options;;    
+});
 
 var form = document.getElementById("simple-form")
 form.onsubmit = function (event) { 
