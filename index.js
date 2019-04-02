@@ -16,6 +16,11 @@ function download_csv() {
 
 optly.get("projects?per_page=100", function(projects){
     var options = "";
+    projects = projects.sort(function(a,b){
+        if(a.name < b.name) { return -1; }
+        if(a.name > b.name) { return 1; }
+        return 0;
+    });
     for (let i = 0; i < projects.length; i++) {
         var project = projects[i];
         options += "<option value='" + project.id + "'>" + project.name + "</option>";
