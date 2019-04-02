@@ -1,4 +1,4 @@
-console.log("Fullstack IDs v0.2");
+console.log("Fullstack IDs v0.2.1");
 var optly = new OptimizelyAPI({
     password: 'fsexperimentids',
     oauth_client_id: 14330300653
@@ -13,7 +13,7 @@ form.onsubmit = function (event) {
         var htmlString = "";
         for (let i = 0; i < exps.length; i++) {
             var experiment = exps[i];
-            htmlString += "<p>" + experiment.id + " --> " + experiment.key + "</p>";
+            htmlString += "<p>" + experiment.id + " , " + experiment.key + "</p>";
         }
         document.getElementById("experiments").innerHTML = htmlString;
     });
