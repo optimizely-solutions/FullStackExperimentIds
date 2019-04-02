@@ -1,3 +1,4 @@
+console.log("v0.11");
 var optly = new OptimizelyAPI({
     password: 'fsexperimentids',
     oauth_client_id: 14330300653
