@@ -1,4 +1,4 @@
-console.log("Fullstack IDs v0.2.3");
+console.log("Fullstack IDs v0.2.4");
 var csv = "";
 
 var optly = new OptimizelyAPI({
