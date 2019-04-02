@@ -6,8 +6,9 @@ var optly = new OptimizelyAPI({
 
 var form = document.getElementById("simple-form")
 form.onsubmit = function (event) { 
-    event.preventDefault(); 
-    optly.get("experiments?project_id=13239170233", function(exps){
+    event.preventDefault();
+    var projectID = document.getElementById("projectid").value;
+    optly.get("experiments?project_id=" + value, function(exps){
         console.log(exps);
     });
 }
