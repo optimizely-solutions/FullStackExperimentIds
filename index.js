@@ -40,8 +40,8 @@ form.onsubmit = function (event) {
         var button = "<button onclick='download_csv()'>Download CSV</button>";
         for (let i = 0; i < exps.length; i++) {
             var experiment = exps[i];
-            htmlString += "<p>" + experiment.id + " ----> " + experiment.key + "</p>";
-            csv += experiment.id + "," + experiment.key + "\n";
+            htmlString += "<p>" + experiment.id + " ----> " + experiment.name + "</p>";
+            csv += experiment.id + "," + experiment.name + "\n";
         }
         document.getElementById("experiments").innerHTML = htmlString;
         document.getElementById("download").innerHTML = button;
